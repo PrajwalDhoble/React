@@ -1,8 +1,8 @@
 import { useState } from "react";
 import "./App.css";
-import { Login } from "./components/Page/login";
+import { Login } from "../Components/Page/login";
 import {  Button } from "@mui/material";
-import { Restaurantscards } from "./components/Page/restaurants";
+import { Restaurantscards } from "../Components/Page/restaurants";
 
 function App() {
   const [display, setdisplay] = useState(true);
