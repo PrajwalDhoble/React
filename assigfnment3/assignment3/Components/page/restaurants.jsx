@@ -16,7 +16,7 @@ export const Restaurantscards = () => {
 
   async function getApiData(prop) {
     try {
-      await axios(`http://localhost:8080/get-restaurants`, {
+      await axios(`http://localhost:3002/get-restaurants`, {
         method: "GET",
         params: {
           _page: page,

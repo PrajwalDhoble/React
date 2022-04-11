@@ -1,7 +1,5 @@
 import { React, useState } from "react";
 import { Button, FormGroup, FormLabel, Input } from "@mui/material";
-import { v4 as uuid } from "uuid";
-import axios from "axios";
 
 export const Login = () => {
   return (
