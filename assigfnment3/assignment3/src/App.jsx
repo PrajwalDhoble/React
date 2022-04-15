@@ -1,29 +1,16 @@
-import { useState } from "react";
 import "./App.css";
 import { Login } from "../Components/Page/login";
-import {  Button } from "@mui/material";
 import { Restaurantscards } from "../Components/Page/restaurants";
+import { useSelector } from "react-redux";
 
 function App() {
-  const [display, setdisplay] = useState(true);
+  const { token, isAuth } = useSelector((state) => state.login);
 
-  const whatToDisplay = () => {
-    if (display == true) {
-      setdisplay(false);
-      return;
-    }
-    setdisplay(true);
-  };
+  console.log(token, isAuth);
+
   return (
     <div className="App">
-      <Button
-        disabled={display == true}
-        variant="contained"
-        onClick={() => whatToDisplay()}
-      >
-        {display == true ? null : "Log out"}
-      </Button>
-      {display == true ? <Login /> : <Restaurantscards />}
+      {isAuth == true ? <Restaurantscards /> : <Login />}
     </div>
   );
 }
