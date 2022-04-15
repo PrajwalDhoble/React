@@ -36,7 +36,6 @@ export const Login = () => {
   };
 
   const handleSignupSubmit = () => {
-    // console.log(registeredUser);
     axios
       .post(
         "https://masai-api-mocker.herokuapp.com/auth/register",
@@ -46,7 +45,7 @@ export const Login = () => {
         let { error, message } = res.data;
 
         if (error === true) {
-          alert("ERROR! couldn't be able to register. TRY AGAIN");
+          alert("ryY Again");
         } else {
           alert(message);
         }
@@ -61,7 +60,7 @@ export const Login = () => {
 
         if (error === true) {
           dispatch(loginError());
-          alert("ERROR! Check username and password");
+          alert("Check username and password");
         } else {
           dispatch(loginSuccess(token));
         }
@@ -79,7 +78,6 @@ export const Login = () => {
           <Input
             className="input-login-signup"
             type="text"
-            placeholder="ENTER YOUR NAME HERE"
             defaultValue={name}
             name="name"
             onChange={(event) => handleSignupChanges(event)}
@@ -88,7 +86,6 @@ export const Login = () => {
           <Input
             className="input-login-signup"
             type="text"
-            placeholder="ENTER YOUR USERNAME HERE"
             defaultValue={username}
             name="username"
             onChange={(event) => handleSignupChanges(event)}
@@ -97,7 +94,6 @@ export const Login = () => {
           <Input
             className="input-login-signup"
             type="email"
-            placeholder="ENTER YOUR EMAIL HERE"
             defaultValue={email}
             name="email"
             onChange={(event) => handleSignupChanges(event)}
@@ -106,8 +102,7 @@ export const Login = () => {
           <Input
             className="input-login-signup"
             type="number"
-            placeholder="ENTER YOUR MOBILE NUMBER HERE"
-            defaultValue={mobile}
+           defaultValue={mobile}
             name="mobile"
             onChange={(event) => handleSignupChanges(event)}
           />
@@ -115,7 +110,6 @@ export const Login = () => {
           <Input
             className="input-login-signup"
             type="password"
-            placeholder="ENTER YOUR PASSWORD HERE"
             defaultValue={password}
             name="password"
             onChange={(event) => handleSignupChanges(event)}
@@ -124,13 +118,11 @@ export const Login = () => {
           <Input
             className="input-login-signup"
             type="text"
-            placeholder="ENTER YOUR BIO HERE"
             defaultValue={description}
             name="description"
             onChange={(event) => handleSignupChanges(event)}
           />
           <Button
-            style={{ marginTop: "20px" }}
             variant="outlined"
             onClick={() => handleSignupSubmit()}
           >
@@ -145,7 +137,6 @@ export const Login = () => {
           <Input
             className="input-login-signup"
             type="text"
-            placeholder="ENTER YOUR USERNAME HERE"
             defaultValue={""}
             name="username"
             onChange={(event) => handleLoginChanges(event)}
@@ -154,14 +145,12 @@ export const Login = () => {
           <Input
             className="input-login-signup"
             type="password"
-            placeholder="ENTER YOUR PASSWORD HERE"
             defaultValue={""}
             name="password"
             onChange={(event) => handleLoginChanges(event)}
           />
           <Button
             disabled={loginUser.username == "" && loginUser.password == ""}
-            style={{ marginTop: "20px" }}
             variant="outlined"
             onClick={() => handleLoginSubmit()}
           >

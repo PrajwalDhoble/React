@@ -1,6 +1,6 @@
 import "./App.css";
 import { Login } from "../Components/Page/login";
-import { Restaurantscards } from "../Components/Page/restaurants";
+import { RestaurantDetails } from "../Components/Page/restaurants";
 import { useSelector } from "react-redux";
 
 function App() {
@@ -10,7 +10,7 @@ function App() {
 
   return (
     <div className="App">
-      {isAuth == true ? <Restaurantscards /> : <Login />}
+      {isAuth == true ? <RestaurantDetails /> : <Login />}
     </div>
   );
 }
