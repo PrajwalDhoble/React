@@ -1,0 +1,16 @@
+{
+    "city": [
+      {
+        "city": "New Delhi",
+        "population": "200000004",
+        "country": "India",
+        "id": 1
+      }
+    ],
+    "country": [
+      {
+        "name": "India",
+        "id": 1
+      }
+    ]
+  }

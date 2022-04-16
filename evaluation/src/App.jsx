@@ -1,21 +1,26 @@
-import { useState } from 'react'
-// import logo from './logo.svg'
-import {Route} from "react-router-dom"
-import './App.css'
-import { City} from "./Components/City"
-import {Country} from "./Components/Country"
+
+import './App.css';
+import {Route, Routes} from 'react-router-dom'
+import {AddCountry} from "./Components/Country"
+import {AddCity} from "./Components/City"
+import { Navbar } from "./Components/Navbar";
+import {Home} from "./Components/Home"
+import {CityUpdate} from  "./Components/CityUpdate"
+import {CityDelete} from  "./Components/CityDelete"
 
 function App() {
-  // const [count, setCount] = useState(0)
-
   return (
     <div className="App">
-      <Route path="/" element={<Home/>}></Route>
-      <Route path="/add-country" element={<Country/>}></Route>
-      <Route path="/add-city" element={<City/>}></Route>
-
+      <Navbar/>
+      <Routes>
+          <Route path="/" element={<Home/>}/>
+          <Route exact path="/add-country" element={<AddCountry/>}/>
+          <Route exact path="/add-city" element={<AddCity/>}/>
+          <Route path="/update/:id" element={<CityUpdate />} />
+          <Route path="/delete/:id" element={<CityDelete />} />
+      </Routes>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

@@ -1,30 +1,26 @@
-import React from "react";
-import { TableContext } from "../Context/TableContext";
-import {useNavigate} from "react-router-dom"
+import { useEffect, useState } from "react";
+import axios from "axios";
 
-export const Country=()=>{
-    const {country,dispatch}=
-    React.useContext(TableContext);
-    const navigate =useNavigate();
+export const AddCountry =()=>{
+    const [country,setCountry] = useState("")
+
+    let API = `http://localhost:3002/country`;
+
+    const handleSubmit=(e)=>{
+        e.preventDefault();
+        axios.post(`${API}`,{name:country}).then(()=>{
+            alert(`${country} added`);
+        });
+    };
 
     return(
         <div>
-            <input 
-            placeholder="Country"
-            type="text"
-            value={country}
-            onChange={(e)=>
-            dispatch({type:"CHANGE_COUNTRY",payload:e.target.value})
-            }
-            >
-            </input>
-            <button
-            onClick={()=>{
-                navigate("/add-city")
-            }}
-            >
-                Next
-            </button>
+            <h1>Add Country</h1>
+            <form onSubmit={(e)=>handleSubmit(e)}>
+            <label>Add Country</label>
+            <input type="text" id={"country"} value={country.name} onChange={(e)=>setCountry(e.target.value)}></input>
+            <input type="submit" value={"Enter"}></input>
+        </form>
         </div>
     )
 }
