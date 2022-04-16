@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-export const CityTable = ({ data }) => {
+export const CityTable = ({ deleteCity,data }) => {
   return (
     <tr>
       <td>{data.id}</td>
@@ -13,8 +13,8 @@ export const CityTable = ({ data }) => {
         </button>
       </td>
       <td>
-        <button>
-          <Link to={`/delete/${data.id}`}>Delete</Link>
+        <button onClick={()=>deleteCity(data.id)}>
+          Delete
         </button>
       </td>
     </tr>

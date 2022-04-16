@@ -47,7 +47,7 @@ export const AddCity=()=>{
     const handleSubmit=(e)=>{
         e.preventDefault();
         axios.post(`${APIcity}`,form).then(()=>{
-            alert(`${form.city} added`);
+            alert(`${form.city} added successfully!`);
         }).then(()=>window.location.reload());
     };
 
