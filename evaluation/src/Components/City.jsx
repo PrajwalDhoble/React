@@ -21,13 +21,8 @@ export const AddCity=()=>{
             getcityData();
         }
     },[])
-
-
-    let APIcountry = "http://localhost:3002/country";
-    let APIcity = "http://localhost:3002/city";
-
     const getCountry=()=>{
-        axios.get(`${APIcountry}`).then((res)=>{
+        axios.get(`http://localhost:3002/country`).then((res)=>{
             setCity([...res.data])
         })
     }
@@ -63,7 +58,7 @@ export const AddCity=()=>{
                         <option value={element.name}>{element.name}</option>
                     ))}
                 </select>
-                <input type="submit" value="Save Country"></input>
+                <input type="submit" value="Save"></input>
             </form>
         </div>
     )
