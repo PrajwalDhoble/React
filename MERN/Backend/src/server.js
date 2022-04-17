@@ -26,7 +26,6 @@ const corsOptions = {
     next();
   });
   
-  
   app.use("/access",accessSchema)
   app.use("/teacher",teacherSchema)
   app.post("/register",register);
