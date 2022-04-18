@@ -2,41 +2,49 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.rs-picker-default .rs-picker-toggle.rs-btn {
+  padding-top: 7px;
+  padding-bottom: 7px;
+  width: 282px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.rs-picker-default .rs-picker-toggle {
+  position: relative;
+  z-index: 5;
+  padding-right: 67px;
+  display: inline-block;
+  outline: none;
+  cursor: pointer;
+  color: #575757;
+  border: 1px solid #e5e5ea;
+  padding-left: 44px;
+}
+.rs-picker-toggle-caret {
+  display: inline-block;
+  margin-right: 240px;
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  font-weight: normal;
+  color: #8e8e93;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.rs-picker-toolbar-right-btn-ok { 
+  text-align: center; 
+  cursor: pointer;
+  outline: 0 ; 
+  border: none; 
+  padding: 8px 12px; 
+  font-size: 14px; 
+  border-radius: 30px;
+  color: #fff;
+  background-color: #3498ff;
+  width: 100px;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-button {
-  font-size: calc(10px + 2vmin);
+.rs-picker-menu .rs-calendar .rs-calendar-table-cell-content {
+  padding-left: 0;
+  padding-right: 0;
+  border-radius: 21px;
+  display: inline-block;
 }
