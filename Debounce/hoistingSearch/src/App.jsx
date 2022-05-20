@@ -29,7 +29,7 @@ export const App =()=>{
             setError(false)
             return
         }
-        axios.get(`https://jsonplacehoder.typicode.com/photos?q=${input}`).then((res)=>{
+        axios.get(`https://jsonplaceholder.typicode.com/photos?q=${input}`).then((res)=>{
             if(res.data.length==0){
                 setData([{id:"0",title:"No Result Found"}])
             }
